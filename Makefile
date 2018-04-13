@@ -1,4 +1,4 @@
-BIN = WatchIt
+BIN = poliright_api
 
 default: 
 		go build -o $(GOPATH)/src/poliright_api/bin/$(BIN) src/*.go
