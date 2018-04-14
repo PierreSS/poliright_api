@@ -1,7 +1,7 @@
 BIN = poliright_api
 
 default: 
-		go build -o $(GOPATH)/src/poliright_api/bin/$(BIN) src/*.go
+		go build -o $(GOPATH)/src/poliright_api/bin/$(BIN) *.go
 
 deps: 
 		go get -u github.com/golang/lint/golint

@@ -45,7 +45,7 @@ func DeletePerson(w http.ResponseWriter, r *http.Request) {}*/
 
 func handleRequest(router *mux.Router) {
 	router.HandleFunc("/", nihao).Methods("GET")
-	router.HandleFunc("/get/iaresponse", getIAResponse).Methods("GET")
+	//router.HandleFunc("/get/iaresponse", getIAResponse).Methods("GET")
 	/*	router.HandleFunc("/people/{id}", test1).Methods("GET")
 		router.HandleFunc("/people/{id}", test2).Methods("POST")
 		router.HandleFunc("/people/{id}", test3).Methods("DELETE")*/
