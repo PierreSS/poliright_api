@@ -2,12 +2,10 @@ package main
 
 //Ma librairie
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
-	"net"
+	"log"
 	"net/http"
-	"strings"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -21,6 +19,10 @@ var (
 	Version = "1.0.0"
 	Build   = time.Now()
 )
+
+func nihao(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "<h1>Hi there, welcome to the poliright golang api !</h1>")
+}
 
 func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	resp := IA{}
@@ -42,6 +44,7 @@ func CreatePerson(w http.ResponseWriter, r *http.Request) {}
 func DeletePerson(w http.ResponseWriter, r *http.Request) {}*/
 
 func handleRequest(router *mux.Router) {
+	router.HandleFunc("/", nihao).Methods("GET")
 	router.HandleFunc("/get/iaresponse", getIAResponse).Methods("GET")
 	/*	router.HandleFunc("/people/{id}", test1).Methods("GET")
 		router.HandleFunc("/people/{id}", test2).Methods("POST")
@@ -53,30 +56,27 @@ func main() {
 
 	fmt.Println("Launching server...")
 
-	// listen on all interfaces
-	ln, _ := net.Listen("tcp", ":8081")
-
-	// accept connection on port
-	conn, _ := ln.Accept()
-
-	// run loop forever (or until ctrl-c)
-	for {
-		// will listen for message to process ending in newline (\n)
-		message, _ := bufio.NewReader(conn).ReadString('\n')
-		// output message received
-		fmt.Print("Message Received:", string(message))
-		// sample process for string received
-		newmessage := strings.ToUpper(message)
-		// send new string back to client
-		conn.Write([]byte(newmessage + "\n"))
-	}
-
-	/*router := mux.NewRouter()
+	router := mux.NewRouter()
 	handleRequest(router)
 	log.Fatal(http.ListenAndServe(":8000", router))
-	*/
-	//	client()
-	/*mux := http.NewServeMux()
-	mux.HandleFunc("/", nihao)
-	http.ListenAndServe(":8000", mux)*/
+	//	mux := http.NewServeMux()
+	//	http.ListenAndServe(":8000", mux)
+
+	// listen on all interfaces
+	/*	ln, _ := net.Listen("tcp", ":8081")
+
+		// accept connection on port
+		conn, _ := ln.Accept()
+
+		// run loop forever (or until ctrl-c)
+		for {
+			// will listen for message to process ending in newline (\n)
+			message, _ := bufio.NewReader(conn).ReadString('\n')
+			// output message received
+			fmt.Print("Message Received:", string(message))
+			// sample process for string received
+			newmessage := strings.ToUpper(message)
+			// send new string back to client
+			conn.Write([]byte(newmessage + "\n"))
+		}*/
 }
