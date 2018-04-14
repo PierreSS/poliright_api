@@ -2,7 +2,7 @@
 	"comment": "",
 	"ignore": "test",
 	"package": [],
-	"rootPath": "poliright_api/src/",
+	"rootPath": "poliright_api/",
 	"heroku": {
         "install" : [ "./..." ],
         "goVersion": "go1.7.0"
