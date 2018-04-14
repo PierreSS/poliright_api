@@ -5,6 +5,6 @@
 	"rootPath": "poliright_api/src/",
 	"heroku": {
         "install" : [ "./..." ],
-        "goVersion": "go1.7.4"
+        "goVersion": "go1.7"
          }
 }
