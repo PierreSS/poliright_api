@@ -4,7 +4,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"net/http"
 	"time"
 
@@ -58,7 +57,8 @@ func main() {
 
 	router := mux.NewRouter()
 	handleRequest(router)
-	log.Fatal(http.ListenAndServe(":8000", router))
+	//	log.Fatal(http.ListenAndServe(":8000", router))
+	http.ListenAndServe(":8000", nil)
 	//	mux := http.NewServeMux()
 	//	http.ListenAndServe(":8000", mux)
 
