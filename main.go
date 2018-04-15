@@ -2,10 +2,14 @@ package main
 
 //Ma librairie
 import (
+	"bufio"
 	"encoding/json"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
+	"os"
+	"strings"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -39,6 +43,14 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	//	json.NewEncoder(w).Encode(phrase)
 }
 
+func balanceTonPort() (string, error) {
+	port := os.Getenv("PORT")
+	if port == "" {
+		return "", fmt.Errorf("$PORT not set")
+	}
+	return ":" + port, nil
+}
+
 /*func GetPerson(w http.ResponseWriter, r *http.Request)    {}
 func CreatePerson(w http.ResponseWriter, r *http.Request) {}
 func DeletePerson(w http.ResponseWriter, r *http.Request) {}*/
@@ -56,32 +68,36 @@ func main() {
 
 	fmt.Println("Launching server...")
 
+	port, err := balanceTonPort()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf(port)
+
 	//	port := os.Getenv("PORT")
-	port := "80"
+	/*port := "8080"
 	fmt.Printf(port)
 	router := mux.NewRouter()
 	handleRequest(router)
-	log.Fatal(http.ListenAndServe(":"+port, router))
+	log.Fatal(http.ListenAndServe(":"+port, router))*/
 	//	mux := http.NewServeMux()
 	//	http.ListenAndServe(":8000", mux)
 
-	/*	port := os.Getenv("PORT")
-		fmt.Printf(port)
-		// listen on all interfaces
-		ln, _ := net.Listen("tcp", ":"+port)
+	// listen on all interfaces
+	ln, _ := net.Listen("tcp", ":"+port)
 
-		// accept connection on port
-		conn, _ := ln.Accept()
+	// accept connection on port
+	conn, _ := ln.Accept()
 
-		// run loop forever (or until ctrl-c)
-		for {
-			// will listen for message to process ending in newline (\n)
-			message, _ := bufio.NewReader(conn).ReadString('\n')
-			// output message received
-			fmt.Print("Message Received:", string(message))
-			// sample process for string received
-			newmessage := strings.ToUpper(message)
-			// send new string back to client
-			conn.Write([]byte(newmessage + "\n"))
-		}*/
+	// run loop forever (or until ctrl-c)
+	for {
+		// will listen for message to process ending in newline (\n)
+		message, _ := bufio.NewReader(conn).ReadString('\n')
+		// output message received
+		fmt.Print("Message Received:", string(message))
+		// sample process for string received
+		newmessage := strings.ToUpper(message)
+		// send new string back to client
+		conn.Write([]byte(newmessage + "\n"))
+	}
 }
