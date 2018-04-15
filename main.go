@@ -3,13 +3,11 @@ package main
 //Ma librairie
 import (
 	"bufio"
-	"encoding/json"
 	"fmt"
 	"log"
 	"net"
 	"net/http"
 	"os"
-	"strings"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -26,21 +24,6 @@ var (
 
 func nihao(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>Hi there, welcome to the poliright golang api !</h1>")
-}
-
-func getIAResponse(w http.ResponseWriter, r *http.Request) {
-	resp := IA{}
-	resp.phrase = "Je suis une phrase politique"
-
-	respJson, err := json.Marshal(resp)
-	if err != nil {
-		panic(err)
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write(respJson)
-	//	json.NewEncoder(w).Encode(phrase)
 }
 
 func balanceTonPort() (string, error) {
@@ -84,20 +67,23 @@ func main() {
 	//	http.ListenAndServe(":8000", mux)
 
 	// listen on all interfaces
-	ln, _ := net.Listen("tcp", ":"+port)
+	ln, _ := net.Listen("tcp", port)
 
 	// accept connection on port
 	conn, _ := ln.Accept()
 
-	// run loop forever (or until ctrl-c)
 	for {
 		// will listen for message to process ending in newline (\n)
 		message, _ := bufio.NewReader(conn).ReadString('\n')
-		// output message received
-		fmt.Print("Message Received:", string(message))
-		// sample process for string received
-		newmessage := strings.ToUpper(message)
-		// send new string back to client
-		conn.Write([]byte(newmessage + "\n"))
+		if message != "" {
+			// output message received
+			fmt.Print("Message Received:", string(message))
+			newmessage := "Je suis une phrase politique"
+			// send new string back to client
+			conn.Write([]byte(newmessage))
+
+			tab, _ := bufio.NewReader(conn).ReadString('\n')
+			fmt.Printf(tab)
+		}
 	}
 }

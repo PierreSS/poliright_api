@@ -1,29 +1,8 @@
 import socket
-import sys
-
-# Create a TCP/IP socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-# Bind the socket to the address given on the command line
-server_address = ('', 10000)
-sock.bind(server_address)
-print >>sys.stderr, 'starting up on %s port %s' % sock.getsockname()
-sock.listen(1)
-
-while True:
-    print >>sys.stderr, 'waiting for a connection'
-    connection, client_address = sock.accept()
-    try:
-        print >>sys.stderr, 'client connected:', client_address
-        while True:
-            data = connection.recv(32)
-            print >>sys.stderr, 'received "%s"' % data
-            if data:
-                test = "azdzaz"
-                test1 = "hahaha"
-                test = test + test1
-                connection.sendall(test)
-            else:
-                break
-    finally:
-        connection.close()
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(('', 5000))
+s.sendall('OK'+'\n')
+data = s.recv(1024)
+s.sendall(data + 'aadz')
+s.close()
+print 'Received', repr(data)
