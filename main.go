@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -56,8 +55,8 @@ func main() {
 
 	fmt.Println("Launching server...")
 
-	port := os.Getenv("PORT")
-
+	//	port := os.Getenv("PORT")
+	port := "8080"
 	fmt.Printf(port)
 	router := mux.NewRouter()
 	handleRequest(router)
