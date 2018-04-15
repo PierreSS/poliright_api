@@ -2,12 +2,10 @@ package main
 
 //Ma librairie
 import (
-	"bufio"
 	"encoding/json"
 	"fmt"
-	"net"
+	"log"
 	"net/http"
-	"strings"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -59,29 +57,31 @@ func main() {
 	fmt.Println("Launching server...")
 
 	//	port := os.Getenv("PORT")
-	/*port := "8080"
+	port := "80"
 	fmt.Printf(port)
 	router := mux.NewRouter()
 	handleRequest(router)
-	log.Fatal(http.ListenAndServe(":"+port, router))*/
+	log.Fatal(http.ListenAndServe(":"+port, router))
 	//	mux := http.NewServeMux()
 	//	http.ListenAndServe(":8000", mux)
 
-	// listen on all interfaces
-	ln, _ := net.Listen("tcp", ":8081")
+	/*	port := os.Getenv("PORT")
+		fmt.Printf(port)
+		// listen on all interfaces
+		ln, _ := net.Listen("tcp", ":"+port)
 
-	// accept connection on port
-	conn, _ := ln.Accept()
+		// accept connection on port
+		conn, _ := ln.Accept()
 
-	// run loop forever (or until ctrl-c)
-	for {
-		// will listen for message to process ending in newline (\n)
-		message, _ := bufio.NewReader(conn).ReadString('\n')
-		// output message received
-		fmt.Print("Message Received:", string(message))
-		// sample process for string received
-		newmessage := strings.ToUpper(message)
-		// send new string back to client
-		conn.Write([]byte(newmessage + "\n"))
-	}
+		// run loop forever (or until ctrl-c)
+		for {
+			// will listen for message to process ending in newline (\n)
+			message, _ := bufio.NewReader(conn).ReadString('\n')
+			// output message received
+			fmt.Print("Message Received:", string(message))
+			// sample process for string received
+			newmessage := strings.ToUpper(message)
+			// send new string back to client
+			conn.Write([]byte(newmessage + "\n"))
+		}*/
 }
