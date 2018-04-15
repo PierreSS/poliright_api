@@ -1,1 +1,1 @@
-web: bin/poliright_api -p 8000
+web: bin/poliright_api 
