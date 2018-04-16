@@ -2,10 +2,8 @@ package main
 
 //Ma librairie
 import (
-	"bufio"
 	"fmt"
 	"log"
-	"net"
 	"net/http"
 	"os"
 	"time"
@@ -67,23 +65,23 @@ func main() {
 	//	http.ListenAndServe(":8000", mux)
 
 	// listen on all interfaces
-	ln, _ := net.Listen("tcp", port)
+	/*	ln, _ := net.Listen("tcp", port)
 
-	// accept connection on port
-	conn, _ := ln.Accept()
+		// accept connection on port
+		conn, _ := ln.Accept()
 
-	for {
-		// will listen for message to process ending in newline (\n)
-		message, _ := bufio.NewReader(conn).ReadString('\n')
-		if message != "" {
-			// output message received
-			fmt.Print("Message Received:", string(message))
-			newmessage := "Je suis une phrase politique"
-			// send new string back to client
-			conn.Write([]byte(newmessage))
+		for {
+			// will listen for message to process ending in newline (\n)
+			message, _ := bufio.NewReader(conn).ReadString('\n')
+			if message != "" {
+				// output message received
+				fmt.Print("Message Received:", string(message))
+				newmessage := "Je suis une phrase politique"
+				// send new string back to client
+				conn.Write([]byte(newmessage))
 
-			tab, _ := bufio.NewReader(conn).ReadString('\n')
-			fmt.Printf(tab)
-		}
-	}
+				tab, _ := bufio.NewReader(conn).ReadString('\n')
+				fmt.Printf(tab)
+			}
+		}*/
 }
