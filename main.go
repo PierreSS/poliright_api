@@ -2,10 +2,8 @@ package main
 
 //Ma librairie
 import (
-	"bufio"
 	"fmt"
 	"log"
-	"net"
 	"net/http"
 	"os"
 	"time"
@@ -34,13 +32,17 @@ func balanceTonPort() (string, error) {
 	return ":" + port, nil
 }
 
+func test(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "<h1>Page test get.</h1>")
+}
+
 /*func GetPerson(w http.ResponseWriter, r *http.Request)    {}
 func CreatePerson(w http.ResponseWriter, r *http.Request) {}
 func DeletePerson(w http.ResponseWriter, r *http.Request) {}*/
 
 func handleRequest(router *mux.Router) {
 	router.HandleFunc("/", nihao).Methods("GET")
-	//router.HandleFunc("/get/iaresponse", getIAResponse).Methods("GET")
+	router.HandleFunc("/get/test", test).Methods("GET")
 	/*	router.HandleFunc("/people/{id}", test1).Methods("GET")
 		router.HandleFunc("/people/{id}", test2).Methods("POST")
 		router.HandleFunc("/people/{id}", test3).Methods("DELETE")*/
@@ -57,35 +59,32 @@ func main() {
 	}
 	fmt.Printf(port)
 
-	//	port := os.Getenv("PORT")
-	/*	port := "8080"
-			fmt.Printf(port)
-		router := mux.NewRouter()
-		handleRequest(router)
-		//	log.Fatal(http.ListenAndServe(":"+port, router))*/
+	router := mux.NewRouter()
+	handleRequest(router)
+	log.Fatal(http.ListenAndServe(port, router))
 	//	mux := http.NewServeMux()
 	//	http.ListenAndServe(":8000", mux)
-
-	http.HandleFunc("/", nihao)
+	//	http.HandleFunc("/", nihao)
+	//	http.ListenAndServe(":8000", nil)
 
 	// listen on all interfaces
-	ln, _ := net.Listen("tcp", port)
+	/*	ln, _ := net.Listen("tcp", port)
 
-	// accept connection on port
-	conn, _ := ln.Accept()
+		// accept connection on port
+		conn, _ := ln.Accept()
 
-	for {
-		// will listen for message to process ending in newline (\n)
-		message, _ := bufio.NewReader(conn).ReadString('\n')
-		if message != "" {
-			// output message received
-			fmt.Print("Message Received:", string(message))
-			newmessage := "Je suis une phrase politique"
-			// send new string back to client
-			conn.Write([]byte(newmessage))
+		for {
+			// will listen for message to process ending in newline (\n)
+			message, _ := bufio.NewReader(conn).ReadString('\n')
+			if message != "" {
+				// output message received
+				fmt.Print("Message Received:", string(message))
+				newmessage := "Je suis une phrase politique"
+				// send new string back to client
+				conn.Write([]byte(newmessage))
 
-			tab, _ := bufio.NewReader(conn).ReadString('\n')
-			fmt.Printf(tab)
-		}
-	}
+				tab, _ := bufio.NewReader(conn).ReadString('\n')
+				fmt.Printf(tab)
+			}
+		}*/
 }
