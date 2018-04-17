@@ -58,13 +58,15 @@ func main() {
 	fmt.Printf(port)
 
 	//	port := os.Getenv("PORT")
-	/*port := "8080"
-	fmt.Printf(port)
-	router := mux.NewRouter()
-	handleRequest(router)
-	log.Fatal(http.ListenAndServe(":"+port, router))*/
+	/*	port := "8080"
+			fmt.Printf(port)
+		router := mux.NewRouter()
+		handleRequest(router)
+		//	log.Fatal(http.ListenAndServe(":"+port, router))*/
 	//	mux := http.NewServeMux()
 	//	http.ListenAndServe(":8000", mux)
+
+	http.HandleFunc("/", nihao)
 
 	// listen on all interfaces
 	ln, _ := net.Listen("tcp", port)
