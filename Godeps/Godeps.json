@@ -1,0 +1,20 @@
+{
+	"ImportPath": "poliright_api",
+	"GoVersion": "go1.7",
+	"GodepVersion": "v80",
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/mux",
+			"Comment": "v1.6.1-14-g94231ff",
+			"Rev": "94231ffd98496cbcb1c15b7bf2a9edfd5f852cd4"
+		},
+		{
+			"ImportPath": "gopkg.in/yaml.v2",
+			"Comment": "v2.2.1",
+			"Rev": "5420a8b6744d3b0345ab293f6fcba19c978f1183"
+		}
+	]
+}
