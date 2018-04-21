@@ -17,5 +17,6 @@ godep restore
 //godep save
 Sauvegarde les dépendances du projet
 
+git add --all; git commit -m "stable"; git push origin master
 
 /* Notice d'utilisation */
