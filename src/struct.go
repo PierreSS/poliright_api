@@ -1,6 +1,15 @@
 package main
 
-import "time"
+import (
+	"net"
+	"time"
+)
+
+var (
+	version = "1.0.0"
+	build   = time.Now()
+	con     net.Conn
+)
 
 //Environnement variables
 type env struct {
@@ -8,7 +17,11 @@ type env struct {
 	PortWebRequest string `yaml:"portWebRequest"`
 }
 
-var (
-	version = "1.0.0"
-	build   = time.Now()
-)
+type ia struct {
+	RelationBetween [][]interface{} `json:"relation_between"`
+	ImportantWords  []string        `json:"important_words"`
+	Politician      []string        `json:"politician"`
+	Sentiment       int             `json:"sentiment"`
+	Topic           string          `json:"topic"`
+	FinalDeduction  []interface{}   `json:"final_deduction"`
+}

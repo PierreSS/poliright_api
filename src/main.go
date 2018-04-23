@@ -2,7 +2,6 @@ package main
 
 //Ma librairie
 import (
-	"bufio"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -27,12 +26,6 @@ func readEnv(env *env) {
 	checkError(erreur)
 	err := yaml.Unmarshal(fileConfig, &env)
 	checkError(err)
-	fmt.Printf(env.PortWebRequest)
-}
-
-//Page d'acceuil de l'api
-func nihao(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<h1>Hi there, welcome to the poliright golang api !</h1>")
 }
 
 //Set le port
@@ -48,18 +41,8 @@ func test(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "<h1>Page test get.</h1>")
 }
 
-//Gere toute les routes du serveur HTTP
-func handleRequest(router *mux.Router) {
-	router.HandleFunc("/", nihao).Methods("GET")
-	router.HandleFunc("/get/test", test).Methods("GET")
-	/*	router.HandleFunc("/people/{id}", test1).Methods("GET")
-		router.HandleFunc("/people/{id}", test2).Methods("POST")
-		router.HandleFunc("/people/{id}", test3).Methods("DELETE")*/
-}
-
 func main() {
-	fmt.Printf("%s\n%s\n", build, version)
-	fmt.Println("Launching server...")
+	writeFile("Le serveur est up.")
 
 	env := env{}
 	readEnv(&env)
@@ -67,7 +50,7 @@ func main() {
 	/*port, err := balanceTonPort()
 	checkError(err)*/
 
-	go iaConnect(&env)
+	iaConnect(&env)
 
 	r := mux.NewRouter()
 	handleRequest(r)
@@ -79,19 +62,24 @@ func iaConnect(env *env) {
 	// listen on all interfaces
 	ln, errp := net.Listen("tcp", ":"+env.PortSocket)
 	checkError(errp)
+
+	//phrase := "phrase de test"
+
 	// accept connection on port
 	conn, erra := ln.Accept()
 	checkError(erra)
+	con = conn
 
-	for {
-		// will listen for message to process ending in newline (\n)
-		message, _ := bufio.NewReader(conn).ReadString('\n')
-		if message != "" {
-			// output message received
-			fmt.Print("Message Received:", string(message))
+	/* 	if phrase != "" {
+	// Envoie la phrase au client
+	conn.Write([]byte(phrase + "\n"))
 
-			//			tab, _ := bufio.NewReader(conn).ReadString('\n')
-			//fmt.Printf(tab)
-		}
-	}
+	d := json.NewDecoder(conn)
+	IA := ia{}
+	d.Decode(&IA)
+	phrase = "" */
+	//		fmt.Println(IA)
+	//		fmt.Printf(IA.RelationBetween[0][0])
+	//	}
+
 }
