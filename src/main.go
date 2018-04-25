@@ -50,7 +50,7 @@ func main() {
 	/*port, err := balanceTonPort()
 	checkError(err)*/
 
-	iaConnect(&env)
+	//iaConnect(&env)
 
 	r := mux.NewRouter()
 	handleRequest(r)
