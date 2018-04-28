@@ -47,14 +47,15 @@ func main() {
 	env := env{}
 	readEnv(&env)
 
-	/*port, err := balanceTonPort()
-	checkError(err)*/
+//	port, err := balanceTonPort()
+//	checkError(err)
 
-	iaConnect(&env)
+	go iaConnect(&env)
 
 	r := mux.NewRouter()
 	handleRequest(r)
-	log.Fatal(http.ListenAndServe(":"+env.PortWebRequest, r))
+//	log.Fatal(http.ListenAndServe(":"+env.PortWebRequest, r))
+	log.Fatal(http.ListenAndServe(":"+env.PortWebRequest, r))	
 }
 
 //Gere l'echange d'info avec l'IA
