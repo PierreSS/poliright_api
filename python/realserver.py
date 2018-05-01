@@ -1,7 +1,7 @@
 import socket, json
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(('163.5.84.174', 443))
+s.connect(('163.5.84.174', 5000))
 print (s)
 """ while 1:
  """data = s.recv(1024)
