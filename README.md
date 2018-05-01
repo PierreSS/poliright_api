@@ -18,5 +18,6 @@ godep restore
 Sauvegarde les dépendances du projet
 
 git add --all; git commit -m "stable"; git push origin master
+export GOPATH=$HOME/go
 
 /* Notice d'utilisation */

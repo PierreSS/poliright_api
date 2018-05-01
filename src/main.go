@@ -9,7 +9,6 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/gorilla/mux"
 	"gopkg.in/yaml.v2"
 )
 
@@ -47,15 +46,15 @@ func main() {
 	env := env{}
 	readEnv(&env)
 
-//	port, err := balanceTonPort()
-//	checkError(err)
+	//	port, err := balanceTonPort()
+	//	checkError(err)
 
-	go iaConnect(&env)
+	iaConnect(&env)
 
-	r := mux.NewRouter()
-	handleRequest(r)
-//	log.Fatal(http.ListenAndServe(":"+env.PortWebRequest, r))
-	log.Fatal(http.ListenAndServe(":"+env.PortWebRequest, r))	
+	//	r := mux.NewRouter()
+	//	handleRequest(r)
+	//	log.Fatal(http.ListenAndServe(":"+env.PortWebRequest, r))
+	//	log.Fatal(http.ListenAndServe(":"+env.PortWebRequest, r))
 }
 
 //Gere l'echange d'info avec l'IA
@@ -64,23 +63,13 @@ func iaConnect(env *env) {
 	ln, errp := net.Listen("tcp", ":"+env.PortSocket)
 	checkError(errp)
 
-	//phrase := "phrase de test"
+	phrase := "phrase de test"
 
 	// accept connection on port
 	conn, erra := ln.Accept()
 	checkError(erra)
 	con = conn
 
-	/* 	if phrase != "" {
 	// Envoie la phrase au client
-	conn.Write([]byte(phrase + "\n"))
-
-	d := json.NewDecoder(conn)
-	IA := ia{}
-	d.Decode(&IA)
-	phrase = "" */
-	//		fmt.Println(IA)
-	//		fmt.Printf(IA.RelationBetween[0][0])
-	//	}
-
+	con.Write([]byte(phrase + "\n"))
 }

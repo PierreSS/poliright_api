@@ -31,7 +31,8 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	urlPart := strings.Split(r.URL.Path, "/getiaresponse/")
 
 	// Envoie la phrase au client
-	con.Write([]byte(urlPart[1] + "\n"))
+	_, err := con.Write([]byte(urlPart[1] + "\n"))
+	fmt.Print(err)
 	d := json.NewDecoder(con)
 	IA := ia{}
 	d.Decode(&IA)
