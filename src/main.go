@@ -65,7 +65,6 @@ func iaConnect(env *env) {
 	checkError(errp)
 
 	//phrase := "phrase de test"
-
 	// accept connection on port
 	conn, erra := ln.Accept()
 	checkError(erra)

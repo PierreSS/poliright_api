@@ -123,3 +123,169 @@ Le serveur est en up.
 2018-05-01 08:39:29 : Le serveur est up.
 2018-05-01 08:40:03 : Le serveur est up.
 2018-05-01 08:40:09 : Le serveur est up.
+2018-05-12 21:39:25 : Le serveur est up.
+2018-05-12 21:39:31 : Le serveur est up.
+2018-05-12 21:41:30 : 127.0.0.1:47540/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-12 21:41:56 : 127.0.0.1:47540/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-12 21:42:04 : 127.0.0.1:47540/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 18:43:17 : Le serveur est up.
+2018-05-14 18:43:59 : 127.0.0.1:37420/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 18:44:12 : 127.0.0.1:37420/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 18:44:31 : Le serveur est up.
+2018-05-14 18:44:38 : 127.0.0.1:37444/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 18:44:44 : 127.0.0.1:37444/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 18:44:52 : Le serveur est up.
+2018-05-14 18:44:59 : 127.0.0.1:37456/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:00:15 : Le serveur est up.
+2018-05-14 19:00:29 : 127.0.0.1:37592/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:00:39 : 127.0.0.1:37592/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:00:52 : 127.0.0.1:37592/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:00:55 : 127.0.0.1:37592/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:01:12 : 127.0.0.1:37592/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:02:48 : Le serveur est up.
+2018-05-14 19:02:52 : 127.0.0.1:37658/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:02:56 : 127.0.0.1:37658/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:02:58 : 127.0.0.1:37658/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:06:47 : Le serveur est up.
+2018-05-14 19:07:13 : 127.0.0.1:37702/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:14:34 : 127.0.0.1:37766/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:14:51 : 127.0.0.1:37766/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-14 19:15:04 : Le serveur est up.
+2018-05-14 19:15:08 : read tcp 127.0.0.1:23->127.0.0.1:44378: use of closed network connection
+2018-05-17 12:55:30 : Le serveur est up.
+2018-05-17 12:56:03 : read tcp 127.0.0.1:23->127.0.0.1:46154: use of closed network connection
+2018-05-17 12:56:25 : Le serveur est up.
+2018-05-17 12:56:46 : read tcp 127.0.0.1:23->127.0.0.1:46230: use of closed network connection
+2018-05-17 12:58:31 : Le serveur est up.
+2018-05-17 12:58:38 : read tcp 127.0.0.1:23->127.0.0.1:46272: use of closed network connection
+2018-05-17 12:58:43 : Le serveur est up.
+2018-05-17 12:58:55 : read tcp 127.0.0.1:23->127.0.0.1:46278: use of closed network connection
+2018-05-17 12:59:13 : Le serveur est up.
+2018-05-17 12:59:17 : read tcp 127.0.0.1:23->127.0.0.1:46288: use of closed network connection
+2018-05-17 12:59:28 : Le serveur est up.
+2018-05-17 12:59:32 : 127.0.0.1:60254/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:05:23 : Le serveur est up.
+2018-05-17 13:05:31 : 127.0.0.1:60306/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:05:38 : 127.0.0.1:60306/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:06:02 : Le serveur est up.
+2018-05-17 13:06:09 : 127.0.0.1:60316/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:06:09 : 127.0.0.1:60320/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:06:20 : 127.0.0.1:60320/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:06:39 : 127.0.0.1:60320/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:06:42 : 127.0.0.1:60320/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:06:51 : 127.0.0.1:60320/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:07:18 : 127.0.0.1:60320/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:08:20 : Le serveur est up.
+2018-05-17 13:08:33 : 127.0.0.1:60366/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:08:33 : 127.0.0.1:60370/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:08:33 : write tcp 127.0.0.1:23->127.0.0.1:46406: write: broken pipe
+2018-05-17 13:08:39 : Le serveur est up.
+2018-05-17 13:08:39 : 127.0.0.1:60388/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:08:39 : 127.0.0.1:60392/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:08:39 : 127.0.0.1:60396/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:08:42 : Le serveur est up.
+2018-05-17 13:08:50 : 127.0.0.1:60404/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:08:50 : 127.0.0.1:60408/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:08:50 : 127.0.0.1:60412/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:09:25 : 127.0.0.1:60416/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:09:25 : 127.0.0.1:60420/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:09:25 : 127.0.0.1:60424/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:09:37 : Le serveur est up.
+2018-05-17 13:09:44 : 127.0.0.1:60430/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:09:44 : 127.0.0.1:60434/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:09:44 : 127.0.0.1:60438/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:10:10 : Le serveur est up.
+2018-05-17 13:10:14 : 127.0.0.1:60446/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:10:14 : 127.0.0.1:60450/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:10:14 : 127.0.0.1:60454/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:10:39 : Le serveur est up.
+2018-05-17 13:10:43 : [::1]:53672/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:10:43 : [::1]:53674/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:10:43 : [::1]:53676/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:11:13 : [::1]:53714/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:11:13 : [::1]:53716/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:11:13 : [::1]:53718/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:11:46 : Le serveur est up.
+2018-05-17 13:12:00 : [::1]:53744/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:12:00 : [::1]:53746/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:12:00 : [::1]:53794/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:12:00 : [::1]:53796/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:12:00 : [::1]:53798/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:12:00 : [::1]:53800/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:12:05 : [::1]:53802/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:12:05 : [::1]:53804/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:12:05 : [::1]:53806/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:15:23 : Le serveur est up.
+2018-05-17 13:15:30 : [::1]:53894/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:15:30 : [::1]:53896/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:15:31 : [::1]:53898/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:16:01 : [::1]:53906/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:16:01 : [::1]:53908/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:16:01 : [::1]:53910/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:16:12 : Le serveur est up.
+2018-05-17 13:16:26 : Le serveur est up.
+2018-05-17 13:16:32 : [::1]:53936/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:16:32 : [::1]:53938/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:16:32 : [::1]:53940/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:16:57 : Le serveur est up.
+2018-05-17 13:17:05 : [::1]:53964/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:17:05 : [::1]:53966/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:17:05 : [::1]:53968/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:18:24 : Le serveur est up.
+2018-05-17 13:18:31 : [::1]:53992/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:18:31 : [::1]:53994/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:18:31 : [::1]:53996/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:19:15 : Le serveur est up.
+2018-05-17 13:19:20 : [::1]:54020/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:19:20 : [::1]:54022/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:19:20 : [::1]:54024/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:24:51 : Le serveur est up.
+2018-05-17 13:26:08 : Le serveur est up.
+2018-05-17 13:26:12 : [::1]:54124/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:26:12 : [::1]:54126/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:26:12 : [::1]:54128/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:26:45 : Le serveur est up.
+2018-05-17 13:26:50 : [::1]:54138/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:26:50 : [::1]:54140/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:26:50 : [::1]:54142/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:27:21 : Le serveur est up.
+2018-05-17 13:27:24 : [::1]:54156/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:27:24 : [::1]:54158/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:27:24 : [::1]:54160/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:27:46 : Le serveur est up.
+2018-05-17 13:27:50 : [::1]:54170/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:27:50 : [::1]:54172/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:27:50 : [::1]:54174/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:28:17 : Le serveur est up.
+2018-05-17 13:28:24 : [::1]:54188/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:18 : Le serveur est up.
+2018-05-17 13:29:24 : [::1]:54202/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:24 : [::1]:54204/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:24 : [::1]:54208/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:24 : [::1]:54210/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:24 : [::1]:54212/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:24 : [::1]:54214/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:29 : [::1]:54218/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:29 : [::1]:54220/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:29 : [::1]:54222/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:49 : Le serveur est up.
+2018-05-17 13:29:52 : [::1]:54230/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:29:58 : [::1]:54230/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:30:17 : [::1]:54230/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:30:17 : write tcp 127.0.0.1:23->127.0.0.1:47084: write: broken pipe
+2018-05-17 13:31:01 : Le serveur est up.
+2018-05-17 13:31:53 : [::1]:54294/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:32:04 : [::1]:54294/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:32:05 : write tcp 127.0.0.1:23->127.0.0.1:47142: write: broken pipe
+2018-05-17 13:32:09 : [::1]:54294/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:32:09 : write tcp 127.0.0.1:23->127.0.0.1:47142: use of closed network connection
+2018-05-17 13:32:11 : [::1]:54294/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:32:11 : write tcp 127.0.0.1:23->127.0.0.1:47142: use of closed network connection
+2018-05-17 13:33:22 : [::1]:54294/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:33:22 : write tcp 127.0.0.1:23->127.0.0.1:47142: use of closed network connection
+2018-05-17 13:33:26 : [::1]:54294/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:33:26 : write tcp 127.0.0.1:23->127.0.0.1:47142: use of closed network connection
+2018-05-17 13:33:43 : [::1]:54294/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:33:43 : write tcp 127.0.0.1:23->127.0.0.1:47142: use of closed network connection
+2018-05-17 13:37:43 : [::1]:54294/getiaresponse/dazdazdazdazdazdaz GET
+2018-05-17 13:37:43 : write tcp 127.0.0.1:23->127.0.0.1:47142: use of closed network connection
