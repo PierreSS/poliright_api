@@ -43,6 +43,8 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	writeFile(log)
 	urlPart := strings.Split(r.URL.Path, "/getiaresponse/")
 
+	fmt.Printf(urlPart[1])
+
 	// Envoie la phrase au client
 	_, err := con.Write([]byte(urlPart[1] + "\n"))
 	d := json.NewDecoder(con)
