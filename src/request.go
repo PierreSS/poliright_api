@@ -43,17 +43,15 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	writeFile(log)
 	urlPart := strings.Split(r.URL.Path, "/getiaresponse/")
 
-	fmt.Printf(urlPart[1])
-
 	// Envoie la phrase au client
-	_, err := con.Write([]byte(urlPart[1] + "\n"))
+	_, err := con.Write([]byte("Il est inacceptable que le Ministère de l'Intérieur organise la venue de 300 imams étrangers dans notre pays pour le #Ramadan. C'est une violation de la laïcité lourde de conséquences ! MLP" + "\n"))
 	d := json.NewDecoder(con)
 	IA := ia{}
 	d.Decode(&IA)
 	if err != nil {
 		IA.Error = err.Error()
-		con.Close()
-		writeFile(err.Error())
+		//con.Close()
+		//		writeFile(err.Error())
 		/* 		env := env{}
 		   		readEnv(&env)
 		   		iaConnect(&env) */
