@@ -41,6 +41,7 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	   	} */
 	log := r.RemoteAddr + r.URL.String() + " " + r.Method
 	writeFile(log)
+	fmt.Printf(r.URL.Path)
 	urlPart := strings.Split(r.URL.Path, "/getiaresponse/")
 
 	fmt.Printf(urlPart[1])
