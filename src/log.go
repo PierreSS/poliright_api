@@ -53,3 +53,10 @@ func writeFile(body string) {
 	file.Sync()
 	defer file.Close()
 }
+
+//Catch un signal
+func goCatchSignal(c chan os.Signal) {
+	sig := <-c
+	fmt.Printf("\n%sSortie de programme suite à %s\n", time.Now().Format("2006-01-02 15:04:05 : [Program] : "), sig)
+	os.Exit(1)
+}

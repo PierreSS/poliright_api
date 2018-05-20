@@ -9,6 +9,8 @@ import (
 	"net"
 	"net/http"
 	"os"
+	"os/signal"
+	"syscall"
 
 	"github.com/gorilla/mux"
 	"gopkg.in/yaml.v2"
@@ -51,6 +53,11 @@ func main() {
 	//	port, err := balanceTonPort()
 	//	checkError(err)
 
+	//Création d'une channel continue pour catch un signal
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
+	//Catch un signal
+	go goCatchSignal(c)
 	go iaConnect(&env)
 
 	r := mux.NewRouter()
@@ -80,7 +87,7 @@ func iaConnect(env *env) {
 			fmt.Printf("%s", message)
 			checkError(err)
 
-			if message == "ia" {
+			if message == "ia\n" {
 				con = conn
 				log.Printf("Connexion accepté : %s.", conn.RemoteAddr().String())
 			} else {
