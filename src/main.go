@@ -2,6 +2,7 @@ package main
 
 //Ma librairie
 import (
+	"bufio"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -75,6 +76,10 @@ func iaConnect(env *env) {
 			log.Fatalln(erra)
 			continue
 		} else {
+			message, err := bufio.NewReader(conn).ReadString('\n')
+			fmt.Printf("%s", message)
+			checkError(err)
+
 			con = conn
 			log.Printf("Connexion accepté : %s.", conn.RemoteAddr().String())
 		}
