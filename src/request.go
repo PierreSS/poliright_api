@@ -38,27 +38,30 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	   		iaConnect(&env)
 	   		m := er{er: "Erreur de connexion à l'ia, reconnexion en cours."}
 	   		json.NewEncoder(w).Encode(m)
-	   	} */
+		   } */
 	log := r.RemoteAddr + r.URL.String() + " " + r.Method
 	writeFile(log)
-	fmt.Printf(r.URL.Path)
 	urlPart := strings.Split(r.URL.Path, "/getiaresponse/")
 
-	fmt.Printf(urlPart[1])
-	// Envoie la phrase au client
-	_, err := con.Write([]byte(urlPart[1] + "\n"))
-	d := json.NewDecoder(con)
 	IA := ia{}
-	d.Decode(&IA)
-	if err != nil {
-		IA.Error = err.Error()
-		//con.Close()
-		//		writeFile(err.Error())
-		/* 		env := env{}
-		   		readEnv(&env)
-		   		iaConnect(&env) */
+	// Envoie la phrase au client
+	if con != nil {
+		n, err := con.Write([]byte(urlPart[1] + "\n"))
+
+		fmt.Println(n)
+		if err != nil {
+			IA.Error = "Connexion impossible à l'IA."
+			con.Close()
+		} else {
+			IA.Error = "none"
+		}
 	} else {
-		IA.Error = "none"
+		IA.Error = "Connexion impossible à l'IA."
+	}
+
+	if con != nil {
+		d := json.NewDecoder(con)
+		d.Decode(&IA)
 	}
 	json.NewEncoder(w).Encode(IA)
 }

@@ -5,6 +5,7 @@ s.connect(('163.5.84.174', 23))
 print (s)
 while 1:
     data = s.recv(1024)
+    print (data)
     """    data = {"null"} """
     data = {"relation_between": [["europe", "centrales", 0]], "important_words": ["les centralesnucl\u00e9aires"], "politician": ["Damien Abad", "Serge Bardy"], "sentiment":-1, "topic": "europe", "final_deduction": [-1, "europe"]}
     json_data = json.dumps(data)

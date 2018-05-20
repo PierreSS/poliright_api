@@ -62,14 +62,28 @@ func main() {
 func iaConnect(env *env) {
 	// listen on all interfaces
 	ln, errp := net.Listen("tcp", ":"+env.PortSocket)
-	checkError(errp)
+	defer ln.Close()
+	if errp != nil {
+		log.Fatalf("Socket listen port %s à renvoyé une erreur,%s", env.PortSocket, errp)
+	}
+	log.Printf("Listen port en cours: %s", env.PortSocket)
 
-	//phrase := "phrase de test"
+	for {
+		// accept connection on port
+		conn, erra := ln.Accept()
+		if erra != nil {
+			log.Fatalln(erra)
+			continue
+		} else {
+			con = conn
+			log.Printf("Connexion accepté : %s.", conn.RemoteAddr().String())
+		}
+	}
 	// accept connection on port
-	conn, erra := ln.Accept()
+	/*conn, erra := ln.Accept()
+	fmt.Printf("New socket connection")
 	checkError(erra)
-	con = conn
-
+	con = conn*/
 	/* 	if phrase != "" {
 	// Envoie la phrase au client
 	conn.Write([]byte(phrase + "\n"))
