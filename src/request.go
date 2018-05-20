@@ -43,6 +43,7 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	writeFile(log)
 	urlPart := strings.Split(r.URL.Path, "/getiaresponse/")
 
+	fmt.Printf("%s", urlPart[1])
 	IA := ia{}
 	// Envoie la phrase au client
 	if con != nil {
