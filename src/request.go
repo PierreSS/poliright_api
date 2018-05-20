@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"net/url"
 	"strings"
 
 	"github.com/gorilla/mux"
@@ -39,9 +40,11 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	   		m := er{er: "Erreur de connexion à l'ia, reconnexion en cours."}
 	   		json.NewEncoder(w).Encode(m)
 		   } */
-	log := r.RemoteAddr + r.URL.String() + " " + r.Method
+	newurl, _ := url.QueryUnescape(r.URL.String())
+	log := r.RemoteAddr + newurl + " " + r.Method
 	writeFile(log)
-	urlPart := strings.Split(r.URL.Path, "/getiaresponse/")
+
+	urlPart := strings.Split(newurl, "/getiaresponse/")
 
 	fmt.Printf("%s", urlPart[1])
 	IA := ia{}
