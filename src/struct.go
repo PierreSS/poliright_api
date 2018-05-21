@@ -24,7 +24,7 @@ type ia struct {
 	Sentiment       int             `json:"sentiment"`
 	Topic           string          `json:"topic"`
 	FinalDeduction  []interface{}   `json:"final_deduction"`
-	Pierre          string          `json:"pierre"`
+	Ispoor          bool            `json:"ispoor"`
 	Error           string
 }
 

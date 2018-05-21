@@ -20,7 +20,7 @@ import (
 func checkError(err error) {
 	if err != nil {
 		writeFile(err.Error())
-		log.Fatal(err)
+		//		log.Fatal(err)
 	}
 }
 
