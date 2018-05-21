@@ -19,6 +19,7 @@ import (
 //Vérifie les erreurs et quitte le programme si il en trouve une
 func checkError(err error) {
 	if err != nil {
+		writeFile(err.Error())
 		log.Fatal(err)
 	}
 }
@@ -80,7 +81,7 @@ func iaConnect(env *env) {
 		// accept connection on port
 		conn, erra := ln.Accept()
 		if erra != nil {
-			log.Fatalln(erra)
+			checkError(erra)
 			continue
 		} else {
 			message, err := bufio.NewReader(conn).ReadString('\n')
