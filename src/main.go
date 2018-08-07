@@ -89,6 +89,7 @@ func iaConnect(env *env) {
 			checkError(err)
 
 			if message == "ia\n" {
+				con.Close()
 				con = conn
 				log.Printf("Connexion accepté : %s.", conn.RemoteAddr().String())
 			} else {
