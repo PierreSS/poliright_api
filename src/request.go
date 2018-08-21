@@ -58,7 +58,6 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 			con.Close()
 		} else {
 			IA.Error = "none"
-			con.Close()
 		}
 	} else {
 		IA.Error = "Connexion impossible à l'IA."
@@ -68,7 +67,7 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	if con != nil {
 		d := json.NewDecoder(con)
 		d.Decode(&IA)
-		con.Close()
 	}
 	json.NewEncoder(w).Encode(IA)
+	con.Close()
 }
