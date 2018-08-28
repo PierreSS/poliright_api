@@ -48,11 +48,14 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 
 	urlPart := strings.Split(newurl, "/getiaresponse/")
 
-	fmt.Printf("From hugo : \n%s\n", urlPart[1])
+	fmt.Printf("Du site web : \n%s\n", urlPart[1])
 	IA := ia{}
-	var jsonstr = []byte(`{"text": urlPart[1]}`)
+	txt := map[string]string{"text": urlPart[1]}
+	jsonval, _ := json.Marshal(txt)
+	var jsonstr = []byte(jsonval)
 
-	response, err := http.NewRequest("POST", "http://139.99.98.189:5000/ia/", bytes.NewBuffer(jsonstr))
+	fmt.Printf("Vers l'ia : %s\n", jsonstr)
+	response, err := http.NewRequest("POST", "http://139.99.98.189:5000/ia", bytes.NewBuffer(jsonstr))
 	checkError(err)
 
 	if err != nil {
