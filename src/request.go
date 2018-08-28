@@ -1,8 +1,10 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -46,28 +48,51 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 
 	urlPart := strings.Split(newurl, "/getiaresponse/")
 
-	fmt.Printf("%s", urlPart[1])
+	fmt.Printf("From hugo : \n%s\n", urlPart[1])
 	IA := ia{}
-	// Envoie la phrase au client
-	if con != nil {
-		n, err := con.Write([]byte(urlPart[1] + "\n"))
+	var jsonstr = []byte(`{"text": urlPart[1]}`)
 
-		fmt.Println(n)
-		if err != nil {
-			IA.Error = "Connexion impossible à l'IA."
-			con.Close()
-		} else {
-			IA.Error = "none"
-		}
-	} else {
+	response, err := http.NewRequest("POST", "http://139.99.98.189:5000/ia/", bytes.NewBuffer(jsonstr))
+	checkError(err)
+
+	if err != nil {
 		IA.Error = "Connexion impossible à l'IA."
-		con.Close()
+	} else {
+		IA.Error = "none"
 	}
 
-	if con != nil {
-		d := json.NewDecoder(con)
-		d.Decode(&IA)
-	}
+	client := &http.Client{}
+	resp, _ := client.Do(response)
+	body, _ := ioutil.ReadAll(resp.Body)
+
+	json.Unmarshal(body, &IA)
+
+	fmt.Printf("L'IA renvoie : \n%s\n", string(body))
+	//	d := json.NewDecoder()
+	//d.Decode(&IA)
+
 	json.NewEncoder(w).Encode(IA)
-	con.Close()
+
+	// Envoie la phrase au client
+	// if con != nil {
+	// 	n, err := con.Write([]byte(urlPart[1] + "\n"))
+
+	// 	fmt.Println(n)
+	// 	if err != nil {
+	// 		IA.Error = "Connexion impossible à l'IA."
+	// 		con.Close()
+	// 	} else {
+	// 		IA.Error = "none"
+	// 	}
+	// } else {
+	// 	IA.Error = "Connexion impossible à l'IA."
+	// 	con.Close()
+	// }
+
+	// if con != nil {
+	// 	d := json.NewDecoder(con)
+	// 	d.Decode(&IA)
+	// }
+	// json.NewEncoder(w).Encode(IA)
+	// con.Close()
 }

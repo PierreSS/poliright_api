@@ -20,6 +20,7 @@ import (
 func checkError(err error) {
 	if err != nil {
 		writeFile(err.Error())
+		fmt.Printf(err.Error())
 		//		log.Fatal(err)
 	}
 }
@@ -59,7 +60,7 @@ func main() {
 	signal.Notify(c, syscall.SIGINT, syscall.SIGTERM)
 	//Catch un signal
 	go goCatchSignal(c)
-	go iaConnect(&env)
+	//go iaConnect(&env)
 
 	r := mux.NewRouter()
 	handleRequest(r)
