@@ -15,11 +15,9 @@ import (
 //Gere toute les routes du serveur HTTP
 func handleRequest(router *mux.Router) {
 	router.HandleFunc("/", nihao).Methods("GET")
-	router.HandleFunc("/get/test", test).Methods("GET")
+	//router.HandleFunc("/get/test", test).Methods("GET")
 	router.HandleFunc("/getiaresponse/{phrase}", getIAResponse).Methods("GET")
 
-	/*	router.HandleFunc("/people/{id}", test2).Methods("POST")
-		router.HandleFunc("/people/{id}", test3).Methods("DELETE")*/
 }
 
 //Page d'acceuil de l'api
@@ -29,19 +27,6 @@ func nihao(w http.ResponseWriter, r *http.Request) {
 
 //Recupere une phrase et renvoie un json
 func getIAResponse(w http.ResponseWriter, r *http.Request) {
-	/* 	var one = []byte{}
-	   	_, errr := con.Read(one)
-	   	fmt.Println(errr)
-	   	if errr != nil {
-	   		con.Close()
-	   		fmt.Println(errr)
-	   		writeFile(errr.Error())
-	   		env := env{}
-	   		readEnv(&env)
-	   		iaConnect(&env)
-	   		m := er{er: "Erreur de connexion à l'ia, reconnexion en cours."}
-	   		json.NewEncoder(w).Encode(m)
-		   } */
 	newurl, _ := url.QueryUnescape(r.URL.String())
 	log := r.RemoteAddr + newurl + " " + r.Method
 	writeFile(log)
@@ -55,7 +40,7 @@ func getIAResponse(w http.ResponseWriter, r *http.Request) {
 	var jsonstr = []byte(jsonval)
 
 	fmt.Printf("Vers l'ia : %s\n", jsonstr)
-	response, err := http.NewRequest("POST", "http://139.99.98.189:5000/ia", bytes.NewBuffer(jsonstr))
+	response, err := http.NewRequest("POST", "http://163.5.220.30:5000/ia", bytes.NewBuffer(jsonstr))
 	checkError(err)
 
 	if err != nil {
